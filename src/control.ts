@@ -1,7 +1,8 @@
 import {Response, Request} from "express";
 const url = require('url');
 
-const reqUrl = 'http://ilhan-test-1.herokuapp.com/?a=9&b=-10';
+const reqUrl = 'http://localhost5000/?a=9&b=-10';   //ilhan-test-1.herokuapp.com
+
 const urlObject = url.parse(reqUrl, true);
 console.log(urlObject.host);
 console.log(urlObject.search);
