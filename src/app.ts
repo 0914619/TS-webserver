@@ -8,7 +8,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.send("welcome"); // default begin screen prints welcome
 });
 
-app.get('/hi', controller.hi); // executes hi from controller if you enter "/" behind the host
+app.get('/', controller.hi); // executes hi from controller if you enter "/" behind the host
 app.get('/sum/', controller.sum); // executes sum from controller if you enter "/sum" behind the host
 app.get('/hello', controller.hello); //in post man change the setter from get to post enter /hello behind the host and it wil execute  hello from  controller
 

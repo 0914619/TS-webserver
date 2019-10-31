@@ -12,7 +12,7 @@ exports.sum = function (req, res) {
     for (var key in req.query) {
         console.log(key, req.query[key]);
         //req.query.iets;
-        // req.query.niets;
+        //req.query.niets;
         var a = Number(req.query.iets);
         var b = Number(req.query.niets);
         console.log(a, " + ", b, " = ", a + b);
