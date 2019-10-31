@@ -1,25 +1,22 @@
 import {Response, Request} from "express";
 const url = require('url');
-
-const reqUrl = 'http://localhost5000/?a=9&b=-10';   //ilhan-test-1.herokuapp.com
-
-const urlObject = url.parse(reqUrl, true);
-console.log(urlObject.host);
-console.log(urlObject.search);
-
-const queryData = urlObject.query;
-
-const add = (a:number, b:number): number => a + b;
+const http = require('http');
 
 export let hi =(req: Request, res: Response) => {
-    res.send("hello, there");
+    res.send("hello, there"); // shows "hello there" when you enter /hi behind the host
 };
 
 export let hello =(req: Request, res: Response) => {
-    res.send("how are you?");
+    res.send("how are you?"); // shows "how are you" when you enter /hello behind the host
 };
 
 export let sum =(req: Request, res: Response) => {
 
-    res.send("9 + 10 = " + add(9,-10));
-};
+    for (const key in req.query) {
+        console.log(key, req.query[key]);
+        //req.query.iets;
+       //req.query.niets;
+        let a = Number(req.query.iets);
+        let b = Number(req.query.niets);
+        console.log(a," + ", b, " = ", a + b);
+}};
