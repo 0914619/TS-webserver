@@ -12,11 +12,30 @@ export let hello =(req: Request, res: Response) => {
 
 export let sum =(req: Request, res: Response) => {
 
-    for (const key in req.query) {
-        console.log(key, req.query[key]);
-        //req.query.iets;
-       //req.query.niets;
-        let a = Number(req.query.iets);
-        let b = Number(req.query.niets);
-        console.log(a," + ", b, " = ", a + b);
-}};
+    console.log(req.query.iets);
+    console.log(req.query.niets);
+    let a = Number(req.query.iets);
+    let b = Number(req.query.niets);
+    const add = a + b;
+    console.log(a,"  +  ", b, "  =  ", add);
+    res.send(a + "+" +b+ "=" +add);
+
+};
+
+
+export let loop =(req: Request, res: Response) => {
+
+    for(const key in req.query) {
+        console.log(Number(req.query[key]));
+        console.log(
+            Number = req.query[key].reduce((a, b) => a + b, 0)
+        )
+
+        //console.log(Number(req.query.a));
+
+        //res.send([key]); // shows "how are you" when you enter /hello behind the host
+    }
+
+
+
+};
